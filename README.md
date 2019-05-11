@@ -1,12 +1,19 @@
-一个简单的定时任务
+一个简单的定时任务    
 
+使用postman添加一个webhook回调
 ![images/list.png](images/list.png)
+
+
+当前任务列表
+![images/list.png](images/list.png)
+
 
 ## 部署
 确保在机器上安装了docker,在项目目录下执行
 ```
 docker build -t go18 .
 ```
+
 使用`docker images`查看编译好的镜像   
 
 
@@ -18,14 +25,16 @@ docker run -d --name jobs \
 -v $(pwd)/packages:/go/src/ go18
 ```
 $(pwd)指项目根目录
+
 访问[http://localhost:8080/list.html](http://localhost:8080/list.html)
 
 
 
 ## 使用说明
 ### 添加任务
-POST [http://localhost:8080/add.html](http://localhost:8080/add.html)   
+POST [http://localhost:8080/add.html](http://localhost:8080/add.html)     
 Content-Type：application/json   
+
 ```
 {
     "time": "2019-05-11 20:50:10",//触发时间
@@ -37,7 +46,7 @@ Content-Type：application/json
 当时time参数小于当前值时会立即执行,NodeJS传参的时候注意maxtries是字符串类型，而非Number类型
 
 ### 删除任务
-POST [http://localhost:8080/del.html](http://localhost:8080/del.html)
+POST [http://localhost:8080/del.html](http://localhost:8080/del.html)    
 Content-Type：application/json   
 ```
 {
@@ -47,7 +56,7 @@ Content-Type：application/json
 
 
 ### 查看任务
-get [http://localhost:8080/list.html](http://localhost:8080/list.html)   
+get [http://localhost:8080/list.html](http://localhost:8080/list.html)      
 response header   
 Content-Type：application/json   
 
