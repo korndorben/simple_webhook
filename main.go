@@ -26,7 +26,6 @@ var (
 //启动队列
 func InitJobQueue() {
 	q.Initialize()
-	fmt.Println(fmt.Sprintf("%v", q))
 
 	//endless loop
 	for {
