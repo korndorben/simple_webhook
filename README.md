@@ -1,7 +1,7 @@
-一个简单的定时任务    
+一个基于http请求的定时任务(webhook)    
 
 使用postman添加一个webhook回调
-![images/list.png](images/list.png)
+![images/list.png](images/postman.png)
 
 
 当前任务列表
